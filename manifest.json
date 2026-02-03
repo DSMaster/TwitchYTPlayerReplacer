@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Twitch to YouTube Player",
+  "version": "1.0",
+  "description": "Replace the Twitch player with a YouTube stream.",
+  "icons": {
+    "16": "icon16.png"
+  },
+  "permissions": [
+    "https://www.twitch.tv/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.twitch.tv/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "twitchytplayer@dsmaster-addons",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  }
+}
